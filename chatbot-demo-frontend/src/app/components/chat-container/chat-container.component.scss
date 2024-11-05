@@ -1,0 +1,56 @@
+hr {
+  border: 0;
+  margin: 16px 0;
+}
+
+.container {
+  margin-bottom: 50px;
+  margin-inline: auto;
+  max-width: 792px;
+  padding-inline: 16px;
+  padding-top: 16px;
+
+  > * {
+    margin-bottom: 16px;
+  }
+}
+
+.question-prompt {
+  bottom: 50px;
+  left: 0;
+  margin-inline: auto;
+  max-width: 792px;
+  position: fixed;
+  right: 0;
+  width: 100%;
+
+  input {
+    all: unset;
+    border-radius: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .question-prompt {
+    display: flex;
+    justify-content: center;
+    max-width: unset;
+
+    input {
+      all: unset;
+      border-radius: 50px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      padding: 16px;
+      width: calc(100% - 32px);
+    }
+  }
+}

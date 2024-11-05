@@ -1,0 +1,10 @@
+.chat-box-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.chat-text {
+  flex: 1;
+  text-align: end;
+}

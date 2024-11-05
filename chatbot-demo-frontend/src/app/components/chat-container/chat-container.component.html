@@ -1,0 +1,24 @@
+<div class="container">
+  @for (item of chatbotService.chatbotHistory; track $index) {
+    @switch (item.role) {
+      @case ('user') {
+        <app-user-chat-box [message]='item.parts[0].text' />
+        <hr />
+      }
+      @case ('model') {
+        <app-bot-chat-box [message]="item.parts[0].text" />
+        <hr />
+      }
+    }
+  } @empty {
+    <p>Enter Your Question</p>
+  }
+
+  @if (isLoading) {
+    <app-spinner />
+  }
+
+  <div class="question-prompt">
+    <input type="text" [disabled]="disabled" placeholder="Please enter your question..." (keyup.enter)="addUserPromptToChatHistory($event)" />
+  </div>
+</div>
